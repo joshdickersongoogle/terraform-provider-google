@@ -15,6 +15,7 @@ import (
 
 func ResourceContainerRegistry() *schema.Resource {
 	return &schema.Resource{
+		DeprecationMessage: "Container Registry is deprecated. Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable."
 		Create: resourceContainerRegistryCreate,
 		Read:   resourceContainerRegistryRead,
 		Delete: resourceContainerRegistryDelete,
@@ -41,7 +42,7 @@ func ResourceContainerRegistry() *schema.Resource {
 				ForceNew:    true,
 				Description: `The ID of the project in which the resource belongs. If it is not provided, the provider project is used.`,
 			},
-
+ 
 			"bucket_self_link": {
 				Type:        schema.TypeString,
 				Computed:    true,
